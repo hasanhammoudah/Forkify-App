@@ -15,7 +15,6 @@ class AddRecipeView extends View {
     this._addHandlerShowWindow();
     this._addHandlerHideWindow();
   }
-
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');
@@ -35,11 +34,9 @@ class AddRecipeView extends View {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
       const data = Object.fromEntries(dataArr);
+      // console.log(data);
       handler(data);
     });
   }
-
-  _generateMarkup() {}
 }
-
 export default new AddRecipeView();
